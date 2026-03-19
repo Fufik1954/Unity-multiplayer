@@ -29,7 +29,6 @@ public class PlayerView : NetworkBehaviour
     // OnNetworkDespawn вызывается, когда объект исчезает из сети 
     public override void OnNetworkDespawn()
     {
-        // Отписка обязательна, чтобы не оставлять "висячие" обработчики, объект может остаться в памяти или вызывать ошибки
         _playerNetwork.Nickname.OnValueChanged -= OnNicknameChanged;
         _playerNetwork.HP.OnValueChanged -= OnHpChanged;
     }

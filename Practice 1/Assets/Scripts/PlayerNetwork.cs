@@ -23,7 +23,6 @@ public class PlayerNetwork : NetworkBehaviour
     {
         if (IsOwner)
         {
-            // Только владелец отправляет на сервер свой локально введенный ник
             // Получаем ник из статической переменной и отправляем на сервер
             SubmitNicknameServerRpc(ConnectionUI.PlayerNickname);
         }

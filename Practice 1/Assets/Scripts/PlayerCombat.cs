@@ -54,10 +54,9 @@ public class PlayerCombatRaycast : NetworkBehaviour
         }
     }
 
-    // Визуализация луча
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position + Vector3.up, transform.forward * _attackRange);
+        Gizmos.DrawRay(transform.position, transform.forward * _attackRange);
     }
 }

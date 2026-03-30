@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class PlayerCamera : NetworkBehaviour
 {
-    [SerializeField] private Vector3 _offset = new(0f, 8f, -6f);
+    [SerializeField] private Vector3 _offset = new(0f, 4f, -2f);
+    [SerializeField] private GameObject _cameraViev;
 
     private Camera _cam;
 
@@ -21,6 +22,6 @@ public class PlayerCamera : NetworkBehaviour
     {
         if (_cam == null) return;
         _cam.transform.position = transform.position + _offset;
-        _cam.transform.LookAt(transform.position);
+        _cam.transform.LookAt(_cameraViev.transform.position);
     }
 }

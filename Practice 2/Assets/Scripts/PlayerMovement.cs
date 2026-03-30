@@ -14,6 +14,8 @@ public class PlayerMovement : NetworkBehaviour
 
     private void Update()
     {
+        if (!GetComponent<PlayerNetwork>().IsAlive.Value) return;
+
         if (!IsOwner) return;
 
         float h = Input.GetAxis("Horizontal");

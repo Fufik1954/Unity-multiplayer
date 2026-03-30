@@ -4,7 +4,7 @@ using System.Globalization;
 
 public class PlayerColor : NetworkBehaviour
 {
-    void Start()
+    public override void OnNetworkSpawn()
     {
         if (IsOwner)
         {

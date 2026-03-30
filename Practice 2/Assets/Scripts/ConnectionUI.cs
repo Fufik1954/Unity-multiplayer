@@ -8,12 +8,14 @@ public class ConnectionUI : MonoBehaviour
 
     // Сохраняем ник локально до появления сетевого объекта игрока.
     public static string PlayerNickname { get; private set; } = "Player";
+    [SerializeField] private GameObject _menuPanel;
 
     public void StartAsHost()
     {
         SaveNickname();
         // Хост одновременно является сервером и клиентом.
         NetworkManager.Singleton.StartHost();
+        HideMenu();
     }
 
     public void StartAsClient()
@@ -21,6 +23,7 @@ public class ConnectionUI : MonoBehaviour
         SaveNickname();
         // Клиент только подключается к уже запущенному хосту/серверу.
         NetworkManager.Singleton.StartClient();
+        HideMenu();
     }
 
     // Сохраняем введеный ник 
@@ -31,5 +34,17 @@ public class ConnectionUI : MonoBehaviour
         string rawValue = _nicknameInput != null ? _nicknameInput.text : string.Empty;
         // Сохраняем в статическую переменную
         PlayerNickname = string.IsNullOrWhiteSpace(rawValue) ? "Player" : rawValue.Trim();
+    }
+
+    private void HideMenu()
+    {
+        if (_menuPanel != null)
+        {
+            _menuPanel.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

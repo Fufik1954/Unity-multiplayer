@@ -3127,6 +3127,7 @@ GameObject:
   - component: {fileID: 987238699483198516}
   - component: {fileID: 7709930220242801948}
   - component: {fileID: 7709930220242801949}
+  - component: {fileID: 7709930220242801950}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -3170,6 +3171,25 @@ MonoBehaviour:
   _port: 7777
   _maximumClients: 4095
   _clientAddress: localhost
+--- !u!114 &7709930220242801950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7709930220242801939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fdaae44044276a49a52229c1597e33b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _updateOrder: 0
+  _timingType: 0
+  _allowTickDropping: 1
+  _maximumFrameTicks: 3
+  _tickRate: 30
+  _pingInterval: 1
+  _physicsMode: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
